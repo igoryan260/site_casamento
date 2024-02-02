@@ -1,0 +1,72 @@
+/******************Lista Presentes**************************/
+section#presentes {
+  width: 90%;
+  margin: 0 auto 50px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+}
+
+section#presentes h2 {
+  background-color: #fff1e8;
+  text-align: end;
+  padding: 0 30px;
+  margin-bottom: 25px;
+}
+
+/**************************estilizando div 'itens'*********************************/
+
+#itens {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 10px;
+}
+
+/*estilização das posições dos elementos*/
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  min-height: 500px;
+  background-color: #ece3e4;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+
+/*******titulo dos itens********/
+.titulo-item {
+  color: #581d22;
+  font-size: 1.5em;
+  font-family: "merienda";
+  margin-bottom: 30px;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.img-item {
+  width: 100%;
+}
+
+/****************btn preço***************/
+div.price {
+  width: 100%;
+  margin: 40px 0;
+  height: 70px;
+}
+
+button.btn-price {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background-color: #dabfc1;
+  border: none;
+  border-radius: 50px;
+  font-family: "pacifico";
+  font-size: 2em;
+  color: white;
+}

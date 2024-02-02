@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.none {
+  display: none;
+}
+
+.displayNormal {
+  display: block;
+}
+
+h1 {
+  color: #581d22;
+  font-size: 4em;
+  font-family: "parisienne";
+}
+
+h2 {
+  color: #581d22;
+  font-size: 2em;
+  font-family: "pacifico";
+}
+
+p {
+  font-family: "parisienne";
+  font-size: 4em;
+}
+
+/**************************fim configurações globais***************************************************/
+
+header {
+  height: 100vh;
+  background: url(../images/background.png);
+  background-position-x: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 10pt;
+}
+
+header img {
+  width: -webkit-fill-available;
+  min-width: 400px;
+  max-width: 500px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  z-index: 0;
+}
+
+header div#titulos_topo_site {
+  width: max-content;
+  margin: 0 auto 100px;
+  display: flex;
+  transform: translateY(80px);
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+header h1,
+header h2 {
+  width: max-content;
+}
+
+header h2 {
+  font-family: "merienda";
+}
+
+/*************************=============================*******************************/
+
+section.boas_vindas {
+  margin: 30px 5%;
+  display: flex;
+  flex-direction: column;
+  color: #581d22;
+  font-size: 5pt;
+}
+
+section.boas_vindas img {
+  align-self: center;
+  max-width: 300px;
+  width: -webkit-fill-available;
+}
+
+section.boas_vindas h2 {
+  margin: 20px 0;
+  text-align: center;
+  font-family: "pacifico";
+  font-size: 5em;
+}
+
+section.boas_vindas p {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/*slider Casal*/
+section#casal .slider {
+  margin: 0 auto;
+}
+
+section#casal .slider .slide {
+  display: none;
+  overflow: hidden;
+  width: 300px;
+}
+
+section#casal .slider .slide img {
+  width: 100%;
+}
+
+/****************************************************/
+/**************section contagem regressiva*****************/
+section#contagem_regressiva {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+}
+
+section#contagem_regressiva h2 {
+  background-color: #fff1e8;
+  text-align: end;
+  padding: 0 30px;
+  margin-bottom: 25px;
+}
+
+section#contagem_regressiva img {
+  width: 20%;
+  margin: 20px 0;
+}
+
+section#contagem_regressiva #dias_content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 650px;
+  margin: 0 auto;
+  min-width: 400px;
+}
+
+section#contagem_regressiva #dias_content span {
+  color: #dabfc1;
+  font-family: "merienda";
+  font-size: 2em;
+}
+
+section#paroquia {
+  margin: 0 auto;
+}
+
+section#paroquia h2 {
+  margin: 0 auto;
+  font-size: 2em;
+  font-family: "pacifico";
+}
+
+section#paroquia p {
+  font-size: 1.8em;
+  margin: 0 auto;
+  color: #581d22;
+}
+
+/*slider paroquia*/
+section#paroquia {
+  /*margin: 30px 5% 50px;*/
+  margin: 0 auto 50px;
+  display: flex;
+  flex-direction: column;
+  color: #581d22;
+}
+
+section#paroquia .slider {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: #581d22;
+}
+
+section#paroquia .slider .slide_paroquia {
+  display: none;
+  overflow: hidden;
+  width: 300px;
+}
+
+section#paroquia .slider .slide_paroquia img {
+  width: 100%;
+}
+
+/*********MAPS****************/
+section#maps {
+  margin-bottom: 50px;
+}
+
+/***********************************/
+/*******animations******************/
+
+.fade {
+  animation: fade 2s ease-in-out;
+}
+
+/*KeyFrames animations*/
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*Finnal Keyframes animations*/
