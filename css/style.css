@@ -240,6 +240,6 @@ section#maps {
 
 @media (min-height: 600px) {
   header {
-    height: 70vh;
+    height: 50vh;
   }
 }
