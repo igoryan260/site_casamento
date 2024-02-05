@@ -101,17 +101,20 @@ section.boas_vindas p {
 }
 
 /*slider Casal*/
-section#casal .slider {
+section#casal .fotos-casal {
   margin: 0 auto;
 }
 
-section#casal .slider .slide {
-  display: none;
-  overflow: hidden;
-  width: 300px;
+section#casal .fotos-casal {
+  width: 95%;
+  max-width: 1000px;
+  justify-items: center;
+  gap: 3px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 2fr));
 }
 
-section#casal .slider .slide img {
+section#casal .fotos-casal img {
   width: 100%;
 }
 
@@ -170,28 +173,30 @@ section#paroquia p {
 
 /*slider paroquia*/
 section#paroquia {
-  /*margin: 30px 5% 50px;*/
-  margin: 0 auto 50px;
+  margin: 30px 5%;
   display: flex;
   flex-direction: column;
   color: #581d22;
 }
 
-section#paroquia .slider {
+section#paroquia .paroquia {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   color: #581d22;
 }
 
-section#paroquia .slider .slide_paroquia {
-  display: none;
-  overflow: hidden;
-  width: 300px;
+section#paroquia .paroquia {
+  width: 95%;
+  max-width: 1000px;
+  justify-items: center;
+  gap: 3px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 2fr));
 }
 
-section#paroquia .slider .slide_paroquia img {
-  width: 100%;
+section#paroquia .paroquia img {
+  min-width: 300px;
 }
 
 /*********MAPS****************/
@@ -218,3 +223,17 @@ section#maps {
 }
 
 /*Finnal Keyframes animations*/
+
+/*Media queries*/
+
+@media (min-width: 960px) {
+  header div#titulos_topo_site {
+    transform: translateY(100px);
+  }
+}
+
+@media (min-width: 600px) {
+  section p {
+    font-size: 4.5em;
+  }
+}
