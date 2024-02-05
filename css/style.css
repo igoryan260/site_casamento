@@ -32,7 +32,7 @@ p {
 /**************************fim configurações globais***************************************************/
 
 header {
-  height: 100vh;
+  height: 650px;
   background: url(../images/background.png);
   background-position-x: center;
   background-size: cover;
@@ -242,6 +242,6 @@ section#maps {
 /*media altura*/
 @media (max-height: 600px) {
   header {
-    height: 75vh;
+    height: 300px;
   }
 }
