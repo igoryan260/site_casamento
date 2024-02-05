@@ -44,8 +44,8 @@ header {
 
 header img {
   width: -webkit-fill-available;
-  min-width: 400px;
-  max-width: 500px;
+  min-width: 350px;
+  max-width: 400px;
   position: absolute;
   top: 25%;
   left: 50%;
