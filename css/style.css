@@ -238,7 +238,7 @@ section#maps {
   }
 }
 
-@media (max-height: 600px) {
+@media (min-height: 600px) {
   header {
     height: 70vh;
   }
