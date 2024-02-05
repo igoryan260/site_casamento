@@ -226,6 +226,7 @@ section#maps {
 
 /*Media queries*/
 
+/*media largura*/
 @media (min-width: 960px) {
   header div#titulos_topo_site {
     transform: translateY(100px);
@@ -238,6 +239,21 @@ section#maps {
   }
 }
 
+@media (min-width: 1920px) {
+  header {
+    height: 100vh;
+  }
+
+  header img {
+    width: 350px;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    z-index: 0;
+  }
+}
+
+/*media altura*/
 @media (min-height: 600px) {
   header {
     height: 75vh;
