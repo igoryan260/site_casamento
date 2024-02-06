@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join("public")));
 
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
     try {
         res.render("index")
     } catch (error) {
