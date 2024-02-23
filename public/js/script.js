@@ -40,12 +40,32 @@ function adicionarAoCarrinho(titulo, preco) {
     //inserir coluna
     var insertTitleProduct = insertRow.insertCell(0)
     var insertPriceProduct = insertRow.insertCell(1)
+    var insertDeleteProduct = insertRow.insertCell(2)
 
     //inserir informações na tabela
     insertTitleProduct.innerHTML = titulo;
     insertPriceProduct.innerHTML = "R$ " + preco
 
+    // Adicionar botão de remoção
+    var removeButton = document.createElement("button");
+    removeButton.innerHTML = "Remover";
+    removeButton.addEventListener("click", function () {
+        removerDoCarrinho(insertRow); // Chama a função para remover do carrinho
+    });
+
+    insertDeleteProduct.appendChild(removeButton);
+
     //atualizar total da compra
+    atualizarTotalCompra();
+}
+
+function removerDoCarrinho(row) {
+    var cartTable = document.querySelector("#table_cart");
+
+    // Remover a linha da tabela
+    cartTable.deleteRow(row.rowIndex);
+
+    // Atualizar total da compra após a remoção
     atualizarTotalCompra();
 }
 
