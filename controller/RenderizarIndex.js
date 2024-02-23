@@ -24,22 +24,22 @@ class RenderizarIndex {
 
             const documentos = [
                 {
-                    titulo: "4 potes hermeticos",
-                    id: "4-potes-hermeticos",
-                    src: "images/itens-lista-presente/Kit com 4 unidades de potes hermetico plastico.jpg",
-                    preco: 55.00
+                    titulo: "Candelabro pingente",
+                    id: "candelabro-pingente",
+                    src: "images/itens-lista-presente/candelabro-pingente.png",
+                    preco: 180.00
                 },
                 {
-                    titulo: "Lustre quadrado",
-                    id: "lustre-quadrado",
-                    src: "images/itens-lista-presente/Lustre Clearcrillic Cristal Acrílico Quadrado Perfeito.jpg",
-                    preco: 50.00
+                    titulo: "Jogo canecas café",
+                    id: "jogo-canecas-cafe",
+                    src: "images/itens-lista-presente/jogo-canecas-cafe.webp",
+                    preco: 82.00
                 },
                 {
-                    titulo: "Lustre 6 luzes",
-                    id: "lustre-6-luzes",
-                    src: "images/itens-lista-presente/Rabbitking Modern Sputnik Lustre, 6-luz de teto para quarto, sala de jantar, cozinha, escritório (ouro).jpg",
-                    preco: 155.00
+                    titulo: "Pipoqueira",
+                    id: "pipoqueira",
+                    src: "images/itens-lista-presente/pipoqueira.webp",
+                    preco: 100.00
                 },
                 {
                     titulo: "Jogo Toalhas 6 peças",
@@ -48,53 +48,59 @@ class RenderizarIndex {
                     preco: 112.00
                 },
                 {
-                    titulo: "10 Cabides",
-                    id: "10-cabides",
-                    src: "images/itens-lista-presente/Calceiro 10 Cabides Triplo Calça Reforçado Aço Cromado.webp",
+                    titulo: "Kit 12 peças utensílios",
+                    id: "kit-12-pecas-utensilios",
+                    src: "images/itens-lista-presente/kit-12-pecas-utensilios.webp",
                     preco: 65.00
                 },
                 {
-                    titulo: "Cesto roupas sujas",
-                    id: "cesto-roupas-sujas",
-                    src: "images/itens-lista-presente/Cesto Balde De Roupas Suja Lavanderia Com Tampa 40 L Verde.webp",
-                    preco: 160.00
+                    titulo: "Kit lavabo",
+                    id: "kit-lavabo",
+                    src: "images/itens-lista-presente/kit-lavabo.webp",
+                    preco: 75.00
                 },
                 {
-                    titulo: "Espelho redondo decorativo",
-                    id: "espelho-redondo-decorativo",
-                    src: "images/itens-lista-presente/Espelho Redondo Decorativo Suspenso Alça 30cm + Pino Brinde.webp",
-                    preco: 40.00
+                    titulo: "Panela de pressão elétrica",
+                    id: "penela-pressao-eletrica",
+                    src: "images/itens-lista-presente/penela-pressao-eletrica.webp",
+                    preco: 290.00
                 },
                 {
-                    titulo: "Jogo tacas 6 peças",
-                    id: "jogo-tacas-6-pecas",
-                    src: "images/itens-lista-presente/Jogo 6 Taças Vidro Para Sobremesa Toffe.jpg",
-                    preco: 55.00
+                    titulo: "Maquina de waffle",
+                    id: "maquina-waffle",
+                    src: "images/itens-lista-presente/maquina-waffle.avif",
+                    preco: 150.00
                 },
                 {
-                    titulo: "Jogo formas antiaderente",
-                    id: "jogo-formas-antiaderente",
-                    src: "images/itens-lista-presente/Jogo de Formas 3 Peças Com Fundo Removível Antiaderente Aço Carbono.jpg",
-                    preco: 40.00
+                    titulo: "Cafeteira elétrica arno",
+                    id: "cafeteira-arno",
+                    src: "images/itens-lista-presente/cafeteira-arno.avif",
+                    preco: 99.00
                 },
                 {
-                    titulo: "Garrafa termica",
-                    id: "garrafa-termica",
-                    src: "images/itens-lista-presente/Garrafa Térmica Unitermi Verona 1 Litro Inox.jpg",
-                    preco: 73.00
+                    titulo: "Gabinete armário do banheiro",
+                    id: "gabinete-armario-banheiro",
+                    src: "images/itens-lista-presente/gabinete-armario-banheiro.avif",
+                    preco: 285.00
                 },
                 {
-                    titulo: "Escorredor de loucas",
-                    id: "escorredor-de-loucas",
-                    src: "images/itens-lista-presente/Escorredor de Louças Zurique.jpg",
-                    preco: 80.00
+                    titulo: "Kit cestos organizadores",
+                    id: "kit-cestos-organizadores",
+                    src: "images/itens-lista-presente/kit-cestos-organizadores.jpg",
+                    preco: 85.90
                 },
                 {
-                    titulo: "Potes mantimentos kit",
-                    id: "potes-mantimentos-kit",
-                    src: "images/itens-lista-presente/Kit 5 Potes De Mantimentos Plástico Decorado Cor Conjunto Kit 5 Branco Color.webp",
-                    preco: 35.00
+                    titulo: "Capa de colchão impermeável",
+                    id: "capa-colchao-impermeavel",
+                    src: "images/itens-lista-presente/capa-colchao-impermeavel.jpg",
+                    preco: 62.00
                 },
+                {
+                    titulo: "Buffet 3 portas master",
+                    id: "buffet-3-portas-master",
+                    src: "images/itens-lista-presente/buffet-3-portas-master.avif",
+                    preco: 240.00
+                }
 
             ]
 

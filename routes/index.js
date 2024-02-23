@@ -4,6 +4,8 @@ import RenderizarIndex from "../controller/RenderizarIndex.js";
 const router = express.Router();
 
 router.get("/", RenderizarIndex.renderizarIndex);
-router.get("/salvarDocumentos", RenderizarIndex.salvarVariosDocs)
+
+//esta rota abaixo só funcionára caso queira adicionar novos itens para a lista de presente...
+//router.get("/salvarDocumentos", RenderizarIndex.salvarVariosDocs)
 
 export default router;

@@ -114,16 +114,10 @@
                 <tr>
                     <th>Produto</th>
                     <th>Preço</th>
-                    <th>Quantidade</th>
-                </tr>
-                <tr>
-                    <td>Produto 1</td>
-                    <td>R$ 50,00</td>
-                    <td>1</td>
                 </tr>
             </table>
 
-            <p id=".cart-total" class="cart-total">Total do Carrinho: R$ <span id="cart-total">0.00</span></p>
+            <p id="cart-total" class="cart-total">Total da sua compra: R$ <span id="cart-total">0.00</span></p>
         </div>
 
         <div id="itens">
@@ -138,26 +132,13 @@
                     </h3>
                     <img class="img-item" src='<%= item.src %>'>
                     <div class="price">
-                        <button class="btn-price">
+                        <button class="btn-price"
+                            onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
                             R$ <%= item.preco %>
                         </button>
                     </div>
                 </div>
                 <% }) %>
-
-                    <!--<div class="item" id='<%= produtos[0].id %>'>
-                <h3 class="titulo-item">
-                    <%= produtos[0].titulo %>
-                </h3>
-                <img class="img-item" src='<%= produtos[0].src %>'>
-
-                <div class="price">
-                    <button class="btn-price">
-                        R$ <%= produtos[0].preco %>,00
-                    </button>
-                </div>
-            </div>-->
-
     </section>
 
     <!--script-->
