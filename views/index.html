@@ -7,9 +7,9 @@
     <title>Beatriz e Igor</title>
 
     <!-- Links -->
-
     <link rel="stylesheet" type="text/css" href="../public/lista_presentes.css">
     <link rel="stylesheet" type="text/css" href="../public/style.css">
+    <link rel="stylesheet" href="../public/cart.css">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,10 +100,48 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
+    <section id="presentes">
+        <h2>Lista de presentes</h2>
 
+        <!--cart-->
+        <i><img src="../public/images/shopping-cart.png"></i>
+        <div id="cart">
+            <table id="table_cart">
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                </tr>
+                <tr>
+                    <td>Produto 1</td>
+                    <td>R$ 50,00</td>
+                    <td>1</td>
+                </tr>
+            </table>
 
-    <!--script-->
-    <script src="../public/js/script.js"></script>
+            <p id=".cart-total" class="cart-total">Total do Carrinho: R$ <span id="cart-total">0.00</span></p>
+        </div>
+
+        <div id="itens">
+
+            <!--Item -->
+            <div class="item" id="faqueiro-01">
+                <h3 class="titulo-item">
+                    Faqueiro Cristal 24 peças
+                </h3>
+                <img class="img-item" id="faqueiro-cristal-24-pecas"
+                    src="../public/images/itens-lista-presente/faqueiro_cristal.webp">
+
+                <div class="price">
+                    <input type="number" id="qtd-faqueiro-01" value="1" min="1">
+                    <button class="btn-price" id="btn-faqueiro-cristal-24-pecas">
+                        R$ 97,00
+                    </button>
+                </div>
+            </div>
+
+            <!--script-->
+            <script src="../public/js/script.js"></script>
 </body>
 
 </html>

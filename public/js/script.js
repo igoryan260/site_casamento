@@ -1,3 +1,4 @@
+/************** countdown merry ***************/
 let dias = document.querySelector("#dias");
 let horas = document.querySelector("#horas");
 let minutos = document.querySelector("#minutos");
@@ -15,9 +16,9 @@ function countdown() {
     let secds = Math.floor(seconds) % 60
 
     dias.innerHTML = days
-    horas.innerHTML = hours
-    minutos.innerHTML = minutes
-    segundos.innerHTML = secds
+    horas.innerHTML = formatTime(hours)
+    minutos.innerHTML = formatTime(minutes)
+    segundos.innerHTML = formatTime(secds)
 }
 
 function formatTime(time) {
@@ -25,3 +26,12 @@ function formatTime(time) {
 }
 
 setInterval(countdown, 1000)
+
+/************** fim countdown merry ***************/
+/************** adicionar ao carrinho **************/
+
+function adicionarAoCarrinho(titulo, preco, quantidade) {
+
+}
+
+/************** fim adicionar ao carrinho **************/

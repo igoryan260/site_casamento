@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" type="text/css" href="lista_presentes.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="cart.css">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +19,10 @@
         href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Merienda:wght@300;400;600;700;800;900&family=Pacifico&family=Parisienne&family=Shantell+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Tangerine:wght@400;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    <!-- SDK MercadoPago.js-->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
 
 </head>
 
@@ -102,699 +107,57 @@
 
     <section id="presentes">
         <h2>Lista de presentes</h2>
+        <!--cart-->
+        <i><img src="images/shopping-cart.png"></i>
+        <div id="cart">
+            <table id="table_cart">
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                </tr>
+                <tr>
+                    <td>Produto 1</td>
+                    <td>R$ 50,00</td>
+                    <td>1</td>
+                </tr>
+            </table>
+
+            <p id=".cart-total" class="cart-total">Total do Carrinho: R$ <span id="cart-total">0.00</span></p>
+        </div>
+
         <div id="itens">
 
             <!--Item -->
-            <div class="item" id="faqueiro-01">
+
+            <% produtos.forEach(item=> {%>
+
+                <div class="item" id="<%= item.id %>">
+                    <h3 class="titulo-item">
+                        <%= item.titulo %>
+                    </h3>
+                    <img class="img-item" src='<%= item.src %>'>
+                    <div class="price">
+                        <button class="btn-price">
+                            R$ <%= item.preco %>
+                        </button>
+                    </div>
+                </div>
+                <% }) %>
+
+                    <!--<div class="item" id='<%= produtos[0].id %>'>
                 <h3 class="titulo-item">
-                    Faqueiro Cristal 24 peças
+                    <%= produtos[0].titulo %>
                 </h3>
-                <img class="img-item" id="faqueiro-cristal-24-pecas"
-                    src="images/itens-lista-presente/faqueiro_cristal.webp">
+                <img class="img-item" src='<%= produtos[0].src %>'>
 
                 <div class="price">
-                    <button class="btn-price" id="btn-faqueiro-cristal-24-pecas">
-                        R$ 97,00
+                    <button class="btn-price">
+                        R$ <%= produtos[0].preco %>,00
                     </button>
                 </div>
-            </div>
+            </div>-->
 
-            <!--Item -->
-            <div class="item" id="faqueiro-02">
-                <h3 class="titulo-item">Faqueiro Tramontina Inox Plenus com Gaveteiro 24 Peças</h3>
-                <img class="img-item" id="faqueiro-tramontina-inox-plenus-com-gaveteiro-24-pecas"
-                    src="images/itens-lista-presente/Faqueiro Tramontina Inox Plenus com Gaveteiro 24 Peças.webp">
-
-                <div class="price">
-                    <button class="btn-price" id="btn-faqueiro-tramontina-inox-plenus-com-gaveteiro-24-pecas">
-                        R$ 200,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="faqueiro-03">
-                <h3 class="titulo-item">
-                    Jogo de Facas Premium Tramontina Branco, 3 Peças
-                </h3>
-                <img class="img-item" id="jogo-de-facas-premium-tramontina-branco-3-pecas"
-                    src="images/itens-lista-presente/Jogo de Facas Premium Tramontina Branco, 3 Peças.jpg">
-                <div class="price">
-                    <button class="btn-price" id="btn-jogo-de-facas-premium-tramontina-branco-3-pecas">
-                        R$ 79,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="aparelho-jantar-01">
-                <h3 class="titulo-item">
-                    Aparelho de Jantar e Chá 20 Peças Tramontina - Porcelana Cinza Redondo Gabrielle
-                </h3>
-                <img class="img-item"
-                    id="aparelho-de-jantar-e-cha-20-pecas-tramontina-porcelana-cinza-redondo-grabielle"
-                    src="images/itens-lista-presente/Aparelho de Jantar e Chá 20 Peças Tramontina.webp">
-                <div class="price">
-                    <button class="btn-price"
-                        id="btn-aparelho-de-jantar-e-cha-20-pecas-tramontina-porcelana-cinza-redondo-grabielle">R$
-                        485,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="aparelho-jantar-02">
-                <h3 class="titulo-item">
-                    Aparelho de Jantar e Chá 20 Peças Ryo Maresia Oxford Porcelanas
-                </h3>
-                <img class="img-item" id="Aparelho de Jantar e Chá 20 Peças Ryo Maresia Oxford Porcelanas"
-                    src="images/itens-lista-presente/Aparelho de Jantar e Chá 20 Peças Ryo Maresia Oxford Porcelanas.webp">
-                <div class="price">
-                    <button class="btn-price" id="Aparelho de Jantar e Chá 20 Peças Ryo Maresia Oxford Porcelanas">R$
-                        420,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="conjunto-assadeiras-01">
-                <h3 class="titulo-item">
-                    Conjunto de Assadeiras de Vidro Marinex 6 Peças
-                </h3>
-                <img class="img-item" id="Conjunto de Assadeiras de Vidro Marinex 6 Peças"
-                    src="images/itens-lista-presente/Conjunto de Assadeiras de Vidro Marinex 6 Peças.webp">
-                <div class="price">
-                    <button class="btn-price" id="Conjunto de Assadeiras de Vidro Marinex 6 Peças">R$
-                        170,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="conjunto-fondue-01">
-                <h3 class="titulo-item">
-                    Conjunto Para Fondue Aço Inox 10 pcs p/ Queijo e Chocolate - CASITA
-                </h3>
-                <img class="img-item" id="Conjunto Para Fondue Aço Inox 10 pcs p/ Queijo e Chocolate - CASITA"
-                    src="images/itens-lista-presente/Conjunto Para Fondue Aço Inox 10 pcs para Queijo e Chocolate - CASITA.webp">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Conjunto Para Fondue Aço Inox 10 pcs p/ Queijo e Chocolate - CASITA">R$
-                        115,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="kit-edredom-01">
-                <h3 class="titulo-item">
-                    Kit Edredom King Size 6 Peças Pérola - DAVY ENXOVAIS
-                </h3>
-                <img class="img-item" id="Kit Edredom King Size 6 Peças Pérola - DAVY ENXOVAIS"
-                    src="images/itens-lista-presente/Kit Edredom King Size 6 Peças Pérola - DAVY ENXOVAIS.webp">
-                <div class="price">
-                    <button class="btn-price" id="Kit Edredom King Size 6 Peças Pérola - DAVY ENXOVAIS">R$
-                        145,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="cobre-leito-01">
-                <h3 class="titulo-item">
-                    Cobre Leito Porcelana Queen 03 Peças - Palha - Casaborda Enxovais
-                </h3>
-                <img class="img-item" id="Cobre Leito Porcelana Queen 03 Peças - Palha - Casaborda Enxovais"
-                    src="images/itens-lista-presente/Cobre Leito Porcelana Queen 03 Peças - Palha - Casaborda Enxovais.webp">
-                <div class="price">
-                    <button class="btn-price" id="Cobre Leito Porcelana Queen 03 Peças - Palha - Casaborda Enxovais">R$
-                        213,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="jogo-panelas-01">
-                <h3 class="titulo-item">
-                    Jogo de Panelas Tramontina Paris Alumínio Antiaderente Starflon Max 7 Peças + Colher
-                </h3>
-                <img class="img-item"
-                    id="Jogo de Panelas Tramontina Paris Alumínio Antiaderente Starflon Max 7 Peças + Colher"
-                    src="images/itens-lista-presente/Jogo de Panelas Tramontina Paris Alumínio Antiaderente Starflon Max 7 Peças + Colher.webp">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Jogo de Panelas Tramontina Paris Alumínio Antiaderente Starflon Max 7 Peças + Colher">R$
-                        380,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="liquidificador-01">
-                <h3 class="titulo-item">
-                    Kit 3x1 Mondial Batedeira Liquidificador Espremedor KT1056
-                </h3>
-                <img class="img-item" id="Kit 3x1 Mondial Batedeira Liquidificador Espremedor KT1056"
-                    src="images/itens-lista-presente/Kit 3x1 Mondial Batedeira Liquidificador Espremedor KT1056.webp">
-                <div class="price">
-                    <button class="btn-price" id="Kit 3x1 Mondial Batedeira Liquidificador Espremedor KT1056">R$
-                        308,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="panela-arroz-eletrica-01">
-                <h3 class="titulo-item">
-                    Panela de Arroz Elétrica Mondial Pratic PE-43-6X - 6 Xícaras 500W
-                </h3>
-                <img class="img-item" id="Panela de Arroz Elétrica Mondial Pratic PE-43-6X - 6 Xícaras 500W"
-                    src="images/itens-lista-presente/Panela de Arroz Elétrica Mondial Pratic PE-43-6X - 6 Xícaras 500W.webp">
-                <div class="price">
-                    <button class="btn-price" id="Panela de Arroz Elétrica Mondial Pratic PE-43-6X - 6 Xícaras 500W">R$
-                        188,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="air-fryer-01">
-                <h3 class="titulo-item">
-                    Fritadeira Elétrica sem Óleo Air Fryer Mondial Pratic AF-31 Preta 3,5L com Timer
-                </h3>
-                <img class="img-item"
-                    id="Fritadeira Elétrica sem Óleo Air Fryer Mondial Pratic AF-31 Preta 3,5L com Timer"
-                    src="images/itens-lista-presente/Fritadeira Elétrica sem Óleo Air Fryer Mondial Pratic AF-31 Preta 3,5L com Timer.webp">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Fritadeira Elétrica sem Óleo Air Fryer Mondial Pratic AF-31 Preta 3,5L com Timer">R$
-                        290,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="conjunto-para-suco-01">
-                <h3 class="titulo-item">
-                    Conjunto para Suco em Vidro 7 Peças Ruvolo - Glass Company Dubai
-                </h3>
-                <img class="img-item" id="Conjunto para Suco em Vidro 7 Peças Ruvolo - Glass Company Dubai"
-                    src="images/itens-lista-presente/Conjunto para Suco em Vidro 7 Peças Ruvolo - Glass Company Dubai.webp">
-                <div class="price">
-                    <button class="btn-price" id="Conjunto para Suco em Vidro 7 Peças Ruvolo - Glass Company Dubai">R$
-                        87,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="panela-pressao-01">
-                <h3 class="titulo-item">
-                    Panela De Pressão Antiaderente Fast Fechamento Externo 4,5L - Aluminio Nacional
-                </h3>
-                <img class="img-item"
-                    id="Panela De Pressão Antiaderente Fast Fechamento Externo 4,5L - Aluminio Nacional"
-                    src="images/itens-lista-presente/Panela De Pressão Antiaderente Fast Fechamento Externo 4,5L - Aluminio Nacional.webp">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Panela De Pressão Antiaderente Fast Fechamento Externo 4,5L - Aluminio Nacional">R$
-                        112,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="sanduicheira-01">
-                <h3 class="titulo-item">
-                    Sanduicheira Mondial Master Grill S-20 - Preto/Inox
-                </h3>
-                <img class="img-item" id="Sanduicheira Mondial Master Grill S-20 - Preto e Inox"
-                    src="images/itens-lista-presente/Sanduicheira Mondial Master Grill S-20 - Preto e Inox.avif">
-                <div class="price">
-                    <button class="btn-price" id="Sanduicheira Mondial Master Grill S-20 - Preto e Inox">R$
-                        105,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="bebedouro-01">
-                <h3 class="titulo-item">
-                    Bebedouro Galão Eos Mineralle Eletrônico EBE01P Preto 110V
-                </h3>
-                <img class="img-item" id="Bebedouro Galão Eos Mineralle Eletrônico EBE01P Preto 110V"
-                    src="images/itens-lista-presente/Bebedouro Galão Eos Mineralle Eletrônico EBE01P Preto 110V.webp">
-                <div class="price">
-                    <button class="btn-price" id="Bebedouro Galão Eos Mineralle Eletrônico EBE01P Preto 110V">R$
-                        260,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="cortina-01">
-                <h3 class="titulo-item">
-                    Cortina Blackout 2,80 X 2,50 Colecao Nova - Admirare
-                </h3>
-                <img class="img-item" id="Cortina Blackout 2,80 X 2,50 Colecao Nova - Admirare"
-                    src="images/itens-lista-presente/Cortina Blackout 2,80 X 2,50 Colecao Nova - Admirare.webp">
-                <div class="price">
-                    <button class="btn-price" id="Cortina Blackout 2,80 X 2,50 Colecao Nova - Admirare">R$
-                        100,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="rodo-e-vassoura-01">
-                <h3 class="titulo-item">
-                    Flash Limp MOP5010 - Mop FIT Giratório, Medidas Balde
-                </h3>
-                <img class="img-item" id="Flash Limp MOP5010 - Mop FIT Giratório, Medidas Balde"
-                    src="images/itens-lista-presente/Flash Limp MOP5010 - Mop FIT Giratório, Medidas Balde.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Flash Limp MOP5010 - Mop FIT Giratório, Medidas Balde">R$
-                        70,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="churrasqueira-01">
-                <h3 class="titulo-item">
-                    Churrasqueira Montana - MOR
-                </h3>
-                <img class="img-item" id="Churrasqueira Montana - MOR"
-                    src="images/itens-lista-presente/Churrasqueira Montana - MOR.webp">
-                <div class="price">
-                    <button class="btn-price" id="Churrasqueira Montana - MOR">R$
-                        200,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="crepeira-01">
-                <h3 class="titulo-item">
-                    Crepeira Mondial Pratic Crepe & Hot Dog - EXCELAYES
-                </h3>
-                <img class="img-item" id="Crepeira Mondial Pratic Crepe & Hot Dog - EXCELAYES"
-                    src="images/itens-lista-presente/Crepeira Mondial Pratic Crepe & Hot Dog - EXCELAYES.webp">
-                <div class="price">
-                    <button class="btn-price" id="Crepeira Mondial Pratic Crepe & Hot Dog - EXCELAYES">R$
-                        134,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="ferro-a-vapor-01">
-                <h3 class="titulo-item">
-                    Ferro Elétrico A Vapor Portátil F32 Azul e Branco Mondial 110v
-                </h3>
-                <img class="img-item" id="Ferro Elétrico A Vapor Portátil F32 Azul e Branco Mondial 110v"
-                    src="images/itens-lista-presente/Ferro Elétrico A Vapor Portátil F32 Azul e Branco Mondial 110v.webp">
-                <div class="price">
-                    <button class="btn-price" id="Ferro Elétrico A Vapor Portátil F32 Azul e Branco Mondial 110v">R$
-                        100,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="conjunto-mesa-lateral-01">
-                <h3 class="titulo-item">
-                    Conjunto Mesinha Lateral Decor Pé Palito Redonda Sala Festa
-                </h3>
-                <img class="img-item" id="Conjunto Mesinha Lateral Decor Pé Palito Redonda Sala Festa"
-                    src="images/itens-lista-presente/Conjunto Mesinha Lateral Decor Pé Palito Redonda Sala Festa.webp">
-                <div class="price">
-                    <button class="btn-price" id="Conjunto Mesinha Lateral Decor Pé Palito Redonda Sala Festa">R$
-                        70,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="conjunto-xicaras-01">
-                <h3 class="titulo-item">
-                    Wincy Conjunto 6 Xicaras e 6 Pires Perola
-                </h3>
-                <img class="img-item" id="Wincy Conjunto 6 Xicaras e 6 Pires Perola"
-                    src="images/itens-lista-presente/Wincy Conjunto 6 Xicaras e 6 Pires Perola.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Wincy Conjunto 6 Xicaras e 6 Pires Perola">R$
-                        78,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="kit-utensilios-cozinha-01">
-                <h3 class="titulo-item">
-                    Jogo Kit 8 Utensílios Para Cozinha Inox Profissionais
-                </h3>
-                <img class="img-item" id="Jogo Kit 8 Utensílios Para Cozinha Inox Profissionais"
-                    src="images/itens-lista-presente/Jogo Kit 8 Utensílios Para Cozinha Inox Profissionais.webp">
-                <div class="price">
-                    <button class="btn-price" id="Jogo Kit 8 Utensílios Para Cozinha    Inox Profissionais">R$
-                        60,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="lixeira-01">
-                <h3 class="titulo-item">
-                    Lixeira Inox 5 Litros Com Balde Removível
-                </h3>
-                <img class="img-item" id="Lixeira Inox 5 Litros Com Balde Removível"
-                    src="images/itens-lista-presente/Lixeira Inox 5 Litros Com Balde Removível.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Lixeira Inox 5 Litros Com Balde Removível">R$
-                        50,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="ventilador-01">
-                <h3 class="titulo-item">
-                    Ventilador Britânia BVT320, 220V, Preto, 3 velocidades, Hélice de 6 pás
-                </h3>
-                <img class="img-item" id="Ventilador Britânia BVT320, 220V, Preto, 3 velocidades, Hélice de 6 pás"
-                    src="images/itens-lista-presente/Ventilador Britânia BVT320, 220V, Preto, 3 velocidades, Hélice de 6 pás.jpg">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Ventilador Britânia BVT320, 220V, Preto, 3 velocidades, Hélice de 6 pás">R$
-                        150,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="cristaleira-01">
-                <h3 class="titulo-item">
-                    Cristaleira Tiffany 2 Portas De Vidro Preto Cor Onix
-                </h3>
-                <img class="img-item" id="Cristaleira Tiffany 2 Portas De Vidro Preto Cor Onix"
-                    src="images/itens-lista-presente/Cristaleira Tiffany 2 Portas De Vidro Preto Cor Onix.webp">
-                <div class="price">
-                    <button class="btn-price" id="Cristaleira Tiffany 2 Portas De Vidro Preto Cor Onix">R$
-                        630,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="varal-01">
-                <h3 class="titulo-item">
-                    Varal de Chão com Abas Slim Preto
-                </h3>
-                <img class="img-item" id="Varal de Chão com Abas Slim Preto"
-                    src="images/itens-lista-presente/Varal de Chão com Abas Slim Preto.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Varal de Chão com Abas Slim Preto">R$
-                        89,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="pratos-01">
-                <h3 class="titulo-item">
-                    Conjunto De Pratos Fundos Astral 6 Peças - Duralex
-                </h3>
-                <img class="img-item" id="Conjunto De Pratos Fundos Astral 6 Peças - Duralex"
-                    src="images/itens-lista-presente/Conjunto De Pratos Fundos Astral 6 Peças - Duralex.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Conjunto De Pratos Fundos Astral 6 Peças - Duralex">R$
-                        43,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="microondas-01">
-                <h3 class="titulo-item">
-                    Micro-ondas PMO23EB 20L Com Função Tira Odor Philco
-                </h3>
-                <img class="img-item" id="Micro-ondas PMO23EB 20L Com Função Tira Odor Philco"
-                    src="images/itens-lista-presente/Micro-ondas PMO23EB 20L Com Função Tira Odor Philco.webp">
-                <div class="price">
-                    <button class="btn-price" id="Micro-ondas PMO23EB 20L Com Função Tira Odor Philco">R$
-                        1500,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="conjunto-mesa-jantar-01">
-                <h3 class="titulo-item">
-                    Conjunto Mesa de Jantar 4 Lugares Milano - Poliman Móveis
-                </h3>
-                <img class="img-item" id="Conjunto Mesa de Jantar 4 Lugares Milano - Poliman Móveis"
-                    src="images/itens-lista-presente/Conjunto Mesa de Jantar 4 Lugares Milano - Poliman Móveis.webp">
-                <div class="price">
-                    <button class="btn-price" id="Conjunto Mesa de Jantar 4 Lugares Milano - Poliman Móveis">R$
-                        315,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="jogo-lencol-01">
-                <h3 class="titulo-item">
-                    Jogo De Lençol Cama Casal 4 Peças Estampado Em Microfibra
-                </h3>
-                <img class="img-item" id="Jogo De Lençol Cama Casal 4 Peças Estampado Em Microfibra"
-                    src="images/itens-lista-presente/Jogo De Lençol Cama Casal 4 Peças Estampado Em Microfibra.webp">
-                <div class="price">
-                    <button class="btn-price" id="Jogo De Lençol Cama Casal 4 Peças Estampado Em Microfibra">R$
-                        55,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="jogo-americano-mesa-posta-01">
-                <h3 class="titulo-item">
-                    Jogo Americano Redondo 6 Peças Mesa Posta Cozinha Promo
-                </h3>
-                <img class="img-item" id="Jogo Americano Redondo 6 Peças Mesa Posta Cozinha Promo"
-                    src="images/itens-lista-presente/Jogo Americano Redondo 6 Peças Mesa Posta Cozinha Promo.webp">
-                <div class="price">
-                    <button class="btn-price" id="Jogo Americano Redondo 6 Peças Mesa Posta Cozinha Promo">R$
-                        67,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="porta-tempero-01">
-                <h3 class="titulo-item">
-                    Porta Tempero Condimento 9 Potes Vidro Tampa Dosadora Suporte Cromado Organização Cozinha
-                </h3>
-                <img class="img-item"
-                    id="Porta Tempero Condimento 9 Potes Vidro Tampa Dosadora Suporte Cromado Organização Cozinha"
-                    src="images/itens-lista-presente/Porta Tempero Condimento 9 Potes Vidro Tampa Dosadora Suporte Cromado Organização Cozinha.jpg">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Porta Tempero Condimento 9 Potes Vidro Tampa Dosadora Suporte Cromado Organização Cozinha">R$
-                        70,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="kit-capas-almofadas-01">
-                <h3 class="titulo-item">
-                    Kit 4 Capas Almofada Luxo Linho Estilo Boho Chic Exclusivo
-                </h3>
-                <img class="img-item" id="Kit 4 Capas Almofada Luxo Linho Estilo Boho Chic Exclusivo"
-                    src="images/itens-lista-presente/Kit 4 Capas Almofada Luxo Linho Estilo Boho Chic Exclusivo.webp">
-                <div class="price">
-                    <button class="btn-price" id="Kit 4 Capas Almofada Luxo Linho Estilo Boho Chic Exclusivo">R$
-                        79,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="kit-potes-hermeticos-01">
-                <h3 class="titulo-item">
-                    Kit com 4 unidades de potes hermetico plastico
-                </h3>
-                <img class="img-item" id="Kit com 4 unidades de potes hermetico plastico"
-                    src="images/itens-lista-presente/Kit com 4 unidades de potes hermetico plastico.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Kit com 4 unidades de potes hermetico plastico">R$
-                        50,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="lustre-01">
-                <h3 class="titulo-item">
-                    Lustre Clearcrillic Cristal Acrílico Quadrado Perfeito
-                </h3>
-                <img class="img-item" id="Lustre Clearcrillic Cristal Acrílico Quadrado Perfeito"
-                    src="images/itens-lista-presente/Lustre Clearcrillic Cristal Acrílico Quadrado Perfeito.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Lustre Clearcrillic Cristal Acrílico Quadrado Perfeito">R$
-                        50,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="lustre-02">
-                <h3 class="titulo-item">
-                    Rabbitking Modern Sputnik Lustre, 6-luz de teto para quarto, sala de jantar, cozinha, escritório
-                    (ouro)
-                </h3>
-                <img class="img-item"
-                    id="Rabbitking Modern Sputnik Lustre, 6-luz de teto para quarto, sala de jantar, cozinha, escritório (ouro)"
-                    src="images/itens-lista-presente/Rabbitking Modern Sputnik Lustre, 6-luz de teto para quarto, sala de jantar, cozinha, escritório (ouro).jpg">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Rabbitking Modern Sputnik Lustre, 6-luz de teto para quarto, sala de jantar, cozinha, escritório (ouro)">R$
-                        155,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="jogo-toalhas-01">
-                <h3 class="titulo-item">
-                    Jogo De Toalhas 6 Peças Felpudas Grande Europa - Algodão (Vinho + Chumbo)
-                </h3>
-                <img class="img-item" id="Jogo De Toalhas 6 Peças Felpudas Grande Europa - Algodão (Vinho + Chumbo)"
-                    src="images/itens-lista-presente/Jogo De Toalhas 6 Peças Felpudas Grande Europa - Algodão (Vinho + Chumbo).jpg">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Jogo De Toalhas 6 Peças Felpudas Grande Europa - Algodão (Vinho + Chumbo)">R$
-                        112,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="jogo-cabids-01">
-                <h3 class="titulo-item">
-                    Calceiro 10 Cabides Triplo Calça Reforçado Aço Cromado
-                </h3>
-                <img class="img-item" id="Calceiro 10 Cabides Triplo Calça Reforçado Aço Cromado"
-                    src="images/itens-lista-presente/Calceiro 10 Cabides Triplo Calça Reforçado Aço Cromado.webp">
-                <div class="price">
-                    <button class="btn-price" id="Calceiro 10 Cabides Triplo Calça Reforçado Aço Cromado">R$
-                        65,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="cesto-roupa-01">
-                <h3 class="titulo-item">
-                    Cesto Balde De Roupas Suja Lavanderia Com Tampa 40 L Verde
-                </h3>
-                <img class="img-item" id="Cesto Balde De Roupas Suja Lavanderia Com Tampa 40 L Verde"
-                    src="images/itens-lista-presente/Cesto Balde De Roupas Suja Lavanderia Com Tampa 40 L Verde.webp">
-                <div class="price">
-                    <button class="btn-price" id="Cesto Balde De Roupas Suja Lavanderia Com Tampa 40 L Verde">R$
-                        161,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="espelho-redondo-01">
-                <h3 class="titulo-item">
-                    Espelho Redondo Decorativo Suspenso Alça 30cm + Pino Brinde
-                </h3>
-                <img class="img-item" id="Espelho Redondo Decorativo Suspenso Alça 30cm + Pino Brinde"
-                    src="images/itens-lista-presente/Espelho Redondo Decorativo Suspenso Alça 30cm + Pino Brinde.webp">
-                <div class="price">
-                    <button class="btn-price" id="Espelho Redondo Decorativo Suspenso Alça 30cm + Pino Brinde">R$
-                        40,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="jogo-tacas-sobremesa-01">
-                <h3 class="titulo-item">
-                    Jogo 6 Taças Vidro Para Sobremesa Toffe
-                </h3>
-                <img class="img-item" id="Jogo 6 Taças Vidro Para Sobremesa Toffe"
-                    src="images/itens-lista-presente/Jogo 6 Taças Vidro Para Sobremesa Toffe.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Jogo 6 Taças Vidro Para Sobremesa Toffe">R$
-                        55,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="jogo-formas-01">
-                <h3 class="titulo-item">
-                    Jogo de Formas 3 Peças Com Fundo Removível Antiaderente Aço Carbono
-                </h3>
-                <img class="img-item" id="Jogo de Formas 3 Peças Com Fundo Removível Antiaderente Aço Carbono"
-                    src="images/itens-lista-presente/Jogo de Formas 3 Peças Com Fundo Removível Antiaderente Aço Carbono.jpg">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Jogo de Formas 3 Peças Com Fundo Removível Antiaderente Aço Carbono">R$
-                        40,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="garrafa-termica-01">
-                <h3 class="titulo-item">
-                    Garrafa Térmica Unitermi Verona 1 Litro Inox
-                </h3>
-                <img class="img-item" id="Garrafa Térmica Unitermi Verona 1 Litro Inox"
-                    src="images/itens-lista-presente/Garrafa Térmica Unitermi Verona 1 Litro Inox.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Garrafa Térmica Unitermi Verona 1 Litro Inox">R$
-                        70,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="escorredor-louca-01">
-                <h3 class="titulo-item">
-                    Escorredor de Louças Zurique
-                </h3>
-                <img class="img-item" id="Escorredor de Louças Zurique"
-                    src="images/itens-lista-presente/Escorredor de Louças Zurique.jpg">
-                <div class="price">
-                    <button class="btn-price" id="Escorredor de Louças Zurique">R$
-                        76,00
-                    </button>
-                </div>
-            </div>
-
-            <!--Item -->
-            <div class="item" id="kit-potes-mantimentos-01">
-                <h3 class="titulo-item">
-                    Kit 5 Potes De Mantimentos Plástico Decorado Cor Conjunto Kit 5 Branco Color
-                </h3>
-                <img class="img-item" id="Kit 5 Potes De Mantimentos Plástico Decorado Cor Conjunto Kit 5 Branco Color"
-                    src="images/itens-lista-presente/Kit 5 Potes De Mantimentos Plástico Decorado Cor Conjunto Kit 5 Branco Color.webp">
-                <div class="price">
-                    <button class="btn-price"
-                        id="Kit 5 Potes De Mantimentos Plástico Decorado Cor Conjunto Kit 5 Branco Color">R$
-                        40,00
-                    </button>
-                </div>
-            </div>
-
-        </div>
     </section>
 
     <!--script-->
