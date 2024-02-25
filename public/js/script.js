@@ -29,13 +29,14 @@ setInterval(countdown, 1000)
 
 /************** fim countdown merry ***************/
 
-/************** adicionar ao carrinho **************/
+/************** adicionar, remover ou atualizar o carrinho **************/
 
-function adicionarAoCarrinho(titulo, preco) {
-    let cartTable = document.querySelector("#table_cart")
+function adicionarAoCarrinho(titulo, preco, id) {
+    let cartTable = document.querySelector("#tbody_cart")
 
     //inserir linha
     let insertRow = cartTable.insertRow(-1)
+    insertRow.id = id
 
     //inserir coluna
     var insertTitleProduct = insertRow.insertCell(0)
@@ -80,4 +81,17 @@ function atualizarTotalCompra() {
     document.querySelector("#cart-total").innerHTML = "Total da sua compra: R$ " + total.toFixed(2);
 }
 
-/************** fim adicionar ao carrinho **************/
+/************** fim adicionar, remover ou atualizar o carrinho **************/
+
+/******************** abrir e fechar carrinho ***************/
+let iconCart = document.querySelector("#icon-cart");
+let cart = document.querySelector("#cart");
+
+iconCart.addEventListener("click", () => {
+    if (cart.classList.contains("none")) {
+        cart.classList.remove("none")
+    } else {
+        cart.classList.add("none")
+    };
+});
+/******************** fim abrir e fechar carrinho ***************/

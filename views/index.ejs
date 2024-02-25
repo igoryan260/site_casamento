@@ -20,9 +20,9 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
-
-    <!-- SDK MercadoPago.js-->
+    <!--SDK MercadoPago.js-->
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+
 
 </head>
 
@@ -108,24 +108,27 @@
     <section id="presentes">
         <h2>Lista de presentes</h2>
         <!--cart-->
-        <i><img src="images/shopping-cart.png"></i>
-        <div id="cart">
+        <i><img src="images/shopping-cart.png" id="icon-cart"></i>
+        <div id="cart" class="none">
             <table id="table_cart">
-                <tr>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_cart"></tbody>
             </table>
 
-            <p id="cart-total" class="cart-total">Total da sua compra: R$ <span id="cart-total">0.00</span></p>
+            <p id="cart-total" class="cart-total">Total da sua compra: R$ <span id="cart-total-price">0.00</span></p>
+
+            <button id="btn-compra">Ir para a compra</button>
+            <div id="wallet_container"></div>
         </div>
 
         <div id="itens">
-
             <!--Item -->
-
             <% produtos.forEach(item=> {%>
-
                 <div class="item" id="<%= item.id %>">
                     <h3 class="titulo-item">
                         <%= item.titulo %>
@@ -142,6 +145,7 @@
     </section>
 
     <!--script-->
+    <script src="js/mercadoPagoIntegracao.js"></script>
     <script src="js/script.js"></script>
 </body>
 
