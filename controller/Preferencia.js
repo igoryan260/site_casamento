@@ -1,43 +1,35 @@
 import mercadopago, { Preference } from "mercadopago"
 import { MercadoPagoConfig } from "mercadopago";
-// REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
-const client = new MercadoPagoConfig({ accessToken: process.env.ACCESS_TOKEN_MP, options: { timeout: 5000 } });
-
 class Preferencia {
-    constructor() { };
+    constructor() {
+
+    };
 
     static async novaPreferencia(req, res) {
+        try {
+            const client = new MercadoPagoConfig({ accessToken: `${process.env.ACCESS_TOKEN_MP}`, options: { timeout: 5000 } });
+            const preference = new Preference(client);
 
-        let preferencia = new Preference(client)
-
-        const preference = {
-            items: [
-                {
-                    title: req.body.description,
-                    id: req.body.id,
-                    unit_price: Number(req.body.price)
-                }
-            ],
-            back_urls: {
-                "success": "http://localhost:8080/feedback",
-                "failure": "http://localhost:8080/feedback",
-                "pending": "http://localhost:8080/feedback"
-            },
-            auto_return: "approved",
-        };
-
-        preferencia.create({
-            body: {
-                preference,
-            }
-        }).then((response) => {
+            let price = parseFloat(req.body.price)
+            const response = await preference.create({
+                body: {
+                    items: [
+                        {
+                            id: req.body.id,
+                            title: req.body.description,
+                            quantity: 1,
+                            unit_price: price
+                        }
+                    ],
+                },
+                auto_return: "http://localhost:3000"
+            })
             res.json({
-                id: response.body.id
+                id: response.id
             });
-        }).catch((error) => {
-            console.log(error);
-        });
+        } catch (erro) {
+            console.error(erro)
+        }
     };
 };
-
 export default Preferencia;
