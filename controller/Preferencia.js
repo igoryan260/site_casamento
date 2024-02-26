@@ -21,8 +21,7 @@ class Preferencia {
                             unit_price: price
                         }
                     ],
-                },
-                auto_return: "http://localhost:3000"
+                }
             })
             res.json({
                 id: response.id
