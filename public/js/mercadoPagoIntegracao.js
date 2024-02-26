@@ -10,45 +10,53 @@ btncompra.addEventListener("click", () => {
 
     let tbodycart = document.querySelector("#tbody_cart");
     let qtditens = tbodycart.getElementsByTagName("tr").length;
-    let itens = [];
+    let itens;
 
     for (let i = 0; i < qtditens; i++) {
         let description = tbodycart.getElementsByTagName("tr")[i].firstChild.innerHTML
         let price = tbodycart.getElementsByTagName("tr")[i].cells[1].innerHTML.replace("R$ ", "")
         let id = tbodycart.getElementsByTagName("tr")[i].id
+        let quantity = 1;
 
         /*dados dos itens que vão comprar*/
         const orderData = {
             description: description,
             price: price,
+            quantity: quantity,
             id: id
         };
-        itens.push(orderData);
+        itens = orderData
     }
     createPrefrence(itens)
 });
 
 //requisicao ao servidor para criar a preferencia de pagamento
 let createPrefrence = async (itens) => {
-    fetch("http://localhost:3000/createPreference", {
-        method: "post",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify(itens),
-    })
-        .then((response) => {
-            return response.json();
+    try {
+        const response = await fetch("http://localhost:3000/createPreference", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(itens),
         })
-        .then((preference) => {
-            createCheckoutButton(preference.id);
 
-            document.querySelector("#btn-compra").classList.add("none");
-        })
-        .catch(function () {
-            alert("Unexpected error");
+        if (response.ok) {
+            const preference = await response.json();
+            createCheckoutButton(preference.id);
+            btncompra.classList.add("none");
+        } else {
+            // Tratar erros específicos ou genéricos, conforme necessário
+            console.error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+            alert("Erro inesperado");
             btncompra.disabled = false;
-        });
+        }
+    } catch (error) {
+        // Capturar erros de rede ou outros erros inesperados
+        console.error("Erro inesperado:", error);
+        alert("Erro inesperado");
+        btncompra.disabled = false;
+    }
 };
 
 /************ fim ir para a compra ***********************/
@@ -69,6 +77,7 @@ function createCheckoutButton(preferenceId) {
                     preferenceId: preferenceId
                 },
                 callbacks: {
+                    onSubmit: () => { console.log("Processando pagamento") },
                     onError: (error) => console.error(error),
                     onReady: () => { console.log("Sucesso ao abrir checkout!") }
                 },
