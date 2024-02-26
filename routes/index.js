@@ -3,6 +3,7 @@ import RenderizarIndex from "../controller/RenderizarIndex.js";
 import Preferencia from "../controller/Preferencia.js";
 
 const router = express.Router();
+router.use(express.json());
 
 router.get("/", RenderizarIndex.renderizarIndex);
 router.get("/feedback", (req, res) => {
