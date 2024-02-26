@@ -33,7 +33,7 @@ btncompra.addEventListener("click", () => {
 //requisicao ao servidor para criar a preferencia de pagamento
 let createPrefrence = async (itens) => {
     try {
-        const response = await fetch("casamentobi.onrender.com/createPreference", {
+        const response = await fetch("/createPreference", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
