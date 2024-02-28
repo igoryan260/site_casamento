@@ -242,6 +242,6 @@ section#maps {
 /*media altura*/
 @media (max-height: 600px) {
   header {
-    height: 300px;
+    height: 570px;
   }
 }

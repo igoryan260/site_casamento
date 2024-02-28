@@ -13,6 +13,8 @@ class RenderizarIndex {
             const produtos = await collection.find({}).toArray()
 
             res.render("index", { produtos })
+
+            await closeDb();
         } catch (error) {
             console.error(error)
         }

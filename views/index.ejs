@@ -107,7 +107,7 @@
 
     <section id="section-cart">
         <!--cart-->
-        <i id="icon-cart"><img src="images/shopping-cart.png"></i>
+        <i id="icon-cart"><img src="images/shopping-cart.png" style="width: 40px"></i>
         <div id="cart" class="none">
             <table id="table_cart">
                 <thead>
@@ -119,9 +119,10 @@
                 <tbody id="tbody_cart"></tbody>
             </table>
 
-            <p id="cart-total" class="cart-total">Total da sua compra: R$ <span id="cart-total-price">0.00</span></p>
+            <p id="cart-total" class="cart-total">Total da sua compra: <span>R$</span><span
+                    id="cart-total-price">0.00</span></p>
 
-            <button id="btn-compra">Ir para a compra</button>
+            <button id="btn-compra" disabled="true">Ir para a compra</button>
             <div id="wallet_container"></div>
         </div>
     </section>

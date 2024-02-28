@@ -15,14 +15,15 @@
 
 /*tornar posição fixa do carrinho*/
 #icon-cart {
-  padding: 0 100px;
+  padding: 0 3%;
   background-color: #dabfc1;
   padding-top: 10px;
+  size: 30px;
 }
 
 #cart {
   width: 100vw;
-  padding: 50px 100px;
+  padding: 50px 2%;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -30,24 +31,66 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  font-family: "merienda";
+  color: white;
 }
 
-th,
+thead,
 td {
-  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
+thead tr {
+  width: 100%;
+  display: flex;
+}
+
+thead tr th {
+  width: 100%;
+}
+
 th {
-  background-color: #f2f2f2;
+  background-color: #dabfc1;
+}
+
+.btn-remove-carrinho {
+  border: none;
+  padding: 2px 5px;
+  font-size: 1em;
+  color: red;
+  background: none;
 }
 
 .cart-total {
   font-weight: 300;
   font-size: 1.5em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "merienda";
   margin-bottom: 15px;
+  color: #dabfc1;
+}
+
+#cart-total span {
+  font-weight: bold;
+  color: #581d22;
+}
+
+/*btn compra*/
+
+#btn-compra {
+  font-size: 2em;
+  padding: 2px 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dabfc1;
+  font-family: "merienda";
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+#btn-compra:hover {
+  background-color: #ffffff;
+  color: #dabfc1;
 }
 
 /*pagar com mercado pago*********/
@@ -57,4 +100,16 @@ th {
 
 #wallet_container .text-NbkDMm {
   font-size: 0.3em;
+}
+
+/************* Meqdia Queries ********************/
+@media (max-width: 500px) {
+  #table_cart,
+  #cart-total {
+    font-size: 0.7em;
+  }
+
+  #btn-compra {
+    font-size: 1em;
+  }
 }

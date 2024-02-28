@@ -5,7 +5,6 @@ const mp = new MercadoPago('APP_USR-e4a6c510-47cc-4d42-b400-3f4fde4c0697', {
 /************ ir para a compra ***********************/
 let btncompra = document.querySelector("#btn-compra")
 btncompra.addEventListener("click", () => {
-
     btncompra.disabled = true;
 
     let tbodycart = document.querySelector("#tbody_cart");
