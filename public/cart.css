@@ -54,6 +54,10 @@ th {
   background-color: #dabfc1;
 }
 
+#tbody_cart tr td {
+  color: #dabfc1;
+}
+
 .btn-remove-carrinho {
   border: none;
   padding: 2px 5px;
