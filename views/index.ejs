@@ -140,9 +140,11 @@
                     </h3>
                     <img class="img-item" src='<%= item.src %>'>
                     <div class="price">
+                        <p> R$ <%= item.preco %>
+                        </p>
                         <button class="btn-price"
                             onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
-                            R$ <%= item.preco %>
+                            Adicionar ao carrinho
                         </button>
                     </div>
                 </div>

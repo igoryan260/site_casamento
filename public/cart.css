@@ -23,6 +23,7 @@
   background-color: #dabfc1;
   padding-top: 10px;
   size: 30px;
+  cursor: pointer;
 }
 
 #cart {
@@ -89,6 +90,7 @@ th {
   font-family: "merienda";
   color: #ffffff;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 #btn-compra:hover {
