@@ -30,7 +30,7 @@ class Preferencia {
                 body: {
                     items: itemsnovapreferencia,
                     back_urls: {
-                        success: "localhost:3000/successpayment"
+                        success: "https://casamentobeig.onrender.com/successpayment"
                     }
                 }
             })
