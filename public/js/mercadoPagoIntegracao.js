@@ -9,7 +9,7 @@ btncompra.addEventListener("click", () => {
 
     let tbodycart = document.querySelector("#tbody_cart");
     let qtditens = tbodycart.getElementsByTagName("tr").length;
-    let itens;
+    let itens = [];
 
     for (let i = 0; i < qtditens; i++) {
         let description = tbodycart.getElementsByTagName("tr")[i].firstChild.innerHTML
@@ -24,7 +24,7 @@ btncompra.addEventListener("click", () => {
             quantity: quantity,
             id: id
         };
-        itens = orderData
+        itens.push(orderData)
     }
     createPrefrence(itens)
 });
