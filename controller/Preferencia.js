@@ -24,15 +24,13 @@ class Preferencia {
                 })
             });
 
-            console.log(itemsnovapreferencia);
-
             const response = await preference.create({
                 body: {
                     items: itemsnovapreferencia,
                     back_urls: {
                         success: "https://casamentobeig.onrender.com/successpayment",
-                        failure: "https://casamentobeig.onrender.com",
-                        pending: "https://casamentobeig.onrender.com"
+                        failure: "https://casamentobeig.onrender.com/failurepayment",
+                        pending: "https://casamentobeig.onrender.com/pendingpayment"
                     }
                 }
             })
