@@ -7,7 +7,9 @@ const route = express.Router();
 route.use(express.json());
 
 route.get("/", RenderizarIndex.renderizarIndex);
-route.get("/successpayment", RenderizarStatusPayment.renderizarStatus);
+route.get("/successpayment", RenderizarStatusPayment.renderizarStatusSuccess);
+route.get("/failurepayment", RenderizarStatusPayment.renderizarStatusFailure)
+route.get("/pendingpayment", RenderizarStatusPayment.renderizarStatusPending)
 route.get("/feedback", (req, res) => {
     res.json({
         Payment: req.query.payment_id,

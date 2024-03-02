@@ -17,10 +17,28 @@ header {
   padding-left: 5%;
 }
 
+/* status pagamento falha*/
+header.pay-failure {
+  background: linear-gradient(180deg, rgb(253, 110, 110), transparent);
+}
+/* status pagamento pendente*/
+header.pay-failure {
+  background: linear-gradient(180deg, rgb(253, 151, 110), transparent);
+}
+
 h1 {
   color: green;
   font-size: 2em;
   font-family: "merienda";
+}
+
+/* status pagamento falha*/
+h1.pay-failure {
+  color: rgb(128, 0, 0);
+}
+/* status pagamento pendente*/
+h1.pay-pending {
+  color: rgb(128, 83, 0);
 }
 
 main {
@@ -61,12 +79,20 @@ section#links {
 
 section#links a {
   cursor: pointer;
+  background-color: #dabfc1;
+  padding: 5px 10px;
   font-family: "montserrat";
   font-weight: 600;
-  color: #dabfc1;
-  font-style: none;
+  color: white;
+  border-radius: 5px;
   text-decoration: none;
   font-size: 1em;
+  box-shadow: black 0px 0px 7px -3px;
+}
+
+section#links a:hover {
+  background-color: white;
+  color: #dabfc1;
 }
 
 /************ media queries ****************/
