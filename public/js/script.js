@@ -63,10 +63,11 @@ function adicionarAoCarrinho(titulo, preco, id) {
     insertDeleteProduct.classList.add("td-delete-product")
     insertDeleteProduct.appendChild(removeButton);
 
-    //atualizar total da compra
+    //atualizar total da compra, verificaçao de carrinho e quantidade de itens no carrinho
     atualizarTotalCompra();
     verificaItensNoCarrinho();
-}
+    indicadorQuantidadeItens();
+};
 
 function removerDoCarrinho(row) {
     var cartTable = document.querySelector("#table_cart");
@@ -78,8 +79,9 @@ function removerDoCarrinho(row) {
     // Remover a linha da tabela
     cartTable.deleteRow(row.rowIndex);
 
-    // Atualizar total da compra após a remoção
+    // Atualizar total da compra após a remoção e atualizar quantidade de itens no carrinho
     atualizarTotalCompra();
+    indicadorQuantidadeItens();
 }
 
 function atualizarTotalCompra() {
@@ -123,3 +125,24 @@ function verificaItensNoCarrinho() {
 }
 
 /* fim habilitar/desabilitar 'ir para compra' se houver itens no carrinho */
+
+
+/*********** indicador de quantidade de itens no carrinho ****************/
+
+function indicadorQuantidadeItens() {
+    let tbody = document.querySelector("#tbody_cart");
+    let linhas = tbody.getElementsByTagName("tr").length;
+
+    //verificar se o valor é zero, se for zero, deixar a quantidade sem innerHTML
+    let qntd = document.querySelector("#qntItemsCart");
+
+    if (linhas == 0) {
+        qntd.innerHTML = "";
+        qntd.style.display = "none"
+    } else {
+        qntd.innerHTML = linhas;
+        qntd.style.display = "flex"
+    };
+}
+
+/*********** Fim indicador de quantidade de itens no carrinho ****************/
