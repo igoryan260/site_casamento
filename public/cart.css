@@ -28,6 +28,7 @@
 }
 
 #qntItemsCart {
+  border: 1.5px solid white;
   background-color: rgb(253, 110, 110);
   border-radius: 20px;
   position: absolute;

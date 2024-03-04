@@ -8,8 +8,8 @@ route.use(express.json());
 
 route.get("/", RenderizarIndex.renderizarIndex);
 route.get("/successpayment", RenderizarStatusPayment.renderizarStatusSuccess);
-route.get("/failurepayment", RenderizarStatusPayment.renderizarStatusFailure)
-route.get("/pendingpayment", RenderizarStatusPayment.renderizarStatusPending)
+route.get("/failurepayment", RenderizarStatusPayment.renderizarStatusFailure);
+route.get("/pendingpayment", RenderizarStatusPayment.renderizarStatusPending);
 route.get("/feedback", (req, res) => {
     res.json({
         Payment: req.query.payment_id,
@@ -18,8 +18,7 @@ route.get("/feedback", (req, res) => {
     });
 });
 route.post("/createPreference", Preferencia.novaPreferencia);
-
 //esta rota abaixo só funcionára caso queira adicionar novos itens para a lista de presente...
-//router.get("/salvarDocumentos", RenderizarIndex.salvarVariosDocs)
+//route.get("/salvarDocumentos", RenderizarIndex.salvarVariosDocs)
 
 export default route;
