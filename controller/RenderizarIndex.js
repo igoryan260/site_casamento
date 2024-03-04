@@ -26,22 +26,16 @@ class RenderizarIndex {
 
             const documentos = [
                 {
-                    titulo: "Micro-ondas eletrolux inox 20L",
-                    id: "microondas-02",
-                    src: "images/itens-lista-presente/microondas02.webp",
-                    preco: 680.00
+                    titulo: "Refrigerador eletrolux Frost Free 127v",
+                    id: "refrigerador-eletrolux-frost-free-127",
+                    src: "images/itens-lista-presente/refrigerador-frost-free-inox-eletrolux.webp",
+                    preco: 2700.00
                 },
                 {
-                    titulo: "Guarda-roupa casal 6 portas",
-                    id: "guarda-roupas-06-portas",
-                    src: "images/itens-lista-presente/guarda-roupas.webp",
-                    preco: 870.00
-                },
-                {
-                    titulo: "Armário de cozinha completo Madesa",
-                    id: "armario-cozinha-completo-madesa",
-                    src: "images/itens-lista-presente/armario-cozinha-madesa.webp",
-                    preco: 960.00
+                    titulo: "Fogão 4 bocas continental inox",
+                    id: "fogao-4-bocas-continental-inox",
+                    src: "images/itens-lista-presente/fogao-4-bocas-continental-inox.avif",
+                    preco: 1260.00
                 }
             ]
 
