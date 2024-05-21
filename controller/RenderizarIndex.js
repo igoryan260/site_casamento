@@ -26,16 +26,16 @@ class RenderizarIndex {
 
             const documentos = [
                 {
-                    titulo: "Refrigerador eletrolux Frost Free 127v",
-                    id: "refrigerador-eletrolux-frost-free-127",
-                    src: "images/itens-lista-presente/refrigerador-frost-free-inox-eletrolux.webp",
-                    preco: 2700.00
+                    titulo: "Smart TV LG LED 32",
+                    id: "smart-tv-lg-led-32",
+                    src: "images/itens-lista-presente/Smart TV LG LED 32.webp",
+                    preco: 1000.00
                 },
                 {
-                    titulo: "Fogão 4 bocas continental inox",
-                    id: "fogao-4-bocas-continental-inox",
-                    src: "images/itens-lista-presente/fogao-4-bocas-continental-inox.avif",
-                    preco: 1260.00
+                    titulo: "Máquina de Lavar Consul 12Kg",
+                    id: "maquina-de-lavar-consul-12kg",
+                    src: "images/itens-lista-presente/Máquina de Lavar Consul 12Kg.webp",
+                    preco: 1600.00
                 }
             ]
 

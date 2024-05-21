@@ -33,7 +33,7 @@ class Preferencia {
                         pending: "https://casamentobeig.onrender.com/pendingpayment"
                     }
                 }
-            })
+            });
             res.json({
                 id: response.id
             });
