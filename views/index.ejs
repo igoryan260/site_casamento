@@ -142,22 +142,69 @@
 
         <div id="itens">
             <!--Item -->
+            <!--Produtos entre 100 e 1000 reais-->
             <% produtos.forEach(item=> {%>
-                <div class="item" id="<%= item.id %>">
-                    <h3 class="titulo-item">
-                        <%= item.titulo %>
-                    </h3>
-                    <img class="img-item" src='<%= item.src %>'>
-                    <div class=" price">
-                        <p> R$ <%= item.preco %>
-                        </p>
-                        <button class="btn-price"
-                            onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
-                            Adicionar ao carrinho
-                        </button>
-                    </div>
-                </div>
-                <% }) %>
+                <% if(item.preco>= 100 && item.preco <= 1000){ %>
+                        <div class="item" id="<%= item.id %>">
+                            <h3 class="titulo-item">
+                                <%= item.titulo %>
+                            </h3>
+                            <img class="img-item" src='<%= item.src %>'>
+                            <div class="price">
+                                <p>
+                                    R$ <%= item.preco %>
+                                </p>
+                                <button class="btn-price"
+                                    onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
+                                    Adicionar ao carrinho
+                                </button>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% }) %>
+
+                                <!--produtos acima de 1000 reais-->
+                                <% produtos.forEach(item=> {%>
+                                    <% if(item.preco> 1000 ){%>
+                                        <div class="item" id="<%= item.id %>">
+                                            <h3 class="titulo-item">
+                                                <%= item.titulo %>
+                                            </h3>
+                                            <img class="img-item" src='<%= item.src %>'>
+                                            <div class="price">
+                                                <p>
+                                                    R$ <%= item.preco %>
+                                                </p>
+                                                <button class="btn-price"
+                                                    onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
+                                                    Adicionar ao carrinho
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                            <% }) %>
+
+                                                <!--produtos abaixo de 100 reais-->
+                                                <% produtos.forEach(item=> {%>
+                                                    <% if(item.preco < 100 ){ %>
+                                                        <div class="item" id="<%= item.id %>">
+                                                            <h3 class="titulo-item">
+                                                                <%= item.titulo %>
+                                                            </h3>
+                                                            <img class="img-item" src='<%= item.src %>'>
+                                                            <div class="price">
+                                                                <p>
+                                                                    R$ <%= item.preco %>
+                                                                </p>
+                                                                <button class="btn-price"
+                                                                    onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
+                                                                    Adicionar ao carrinho
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                            <% }) %>
+
     </section>
 
     <footer>
