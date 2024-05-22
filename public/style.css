@@ -215,17 +215,13 @@ section#paroquia {
 section#paroquia .paroquia {
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
   color: #581d22;
-}
-
-section#paroquia .paroquia {
-  width: 95%;
-  max-width: 1000px;
-  justify-items: center;
-  gap: 3px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 2fr));
+  justify-content: flex-start;
+  gap: 25px;
+  padding: 15px;
+  width: 384px;
+  margin: 0 auto;
+  overflow: auto;
 }
 
 section#paroquia .paroquia img {
@@ -325,6 +321,11 @@ footer p {
 
   .slide_itens img {
     width: 210px;
+  }
+
+  section#paroquia .paroquia {
+    width: 728px;
+    justify-content: center;
   }
 }
 
