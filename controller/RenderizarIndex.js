@@ -24,16 +24,16 @@ class RenderizarIndex {
 
             const documentos = [
                 {
-                    titulo: "Smart TV LG LED 32",
-                    id: "smart-tv-lg-led-32",
-                    src: "images/itens-lista-presente/Smart TV LG LED 32.webp",
-                    preco: 1000.00
+                    titulo: "kit mesa posta sousplast",
+                    id: "kit-mesa-posta-sousplast",
+                    src: "images/itens-lista-presente/kit mesa posta sousplast.webp",
+                    preco: 180.00
                 },
                 {
-                    titulo: "Máquina de Lavar Consul 12Kg",
-                    id: "maquina-de-lavar-consul-12kg",
-                    src: "images/itens-lista-presente/Máquina de Lavar Consul 12Kg.webp",
-                    preco: 1600.00
+                    titulo: "Jogo Café da manhã",
+                    id: "jogo-cafe-da-manha",
+                    src: "images/itens-lista-presente/jogo cafe da manha.webp",
+                    preco: 190.00
                 }
             ]
 

@@ -57,7 +57,6 @@ section#presentes h2 {
 div.price {
   width: 100%;
   margin: 15px 0;
-  height: 90px;
 }
 
 div.price p {
@@ -70,10 +69,10 @@ div.price p {
 
 button.btn-price {
   width: 100%;
-  height: 50%;
   outline: none;
   background-color: #dabfc1;
   border: none;
+  margin-top: 10px;
   border-radius: 50px;
   font-family: "pacifico";
   font-size: 1.4em;
@@ -84,5 +83,22 @@ button.btn-price {
 
 button.btn-price:hover {
   background-color: white;
+  color: #dabfc1;
+}
+
+button.btnPix {
+  width: 100%;
+  outline: none;
+  background: none;
+  border: none;
+  margin-top: 10px;
+  font-family: "pacifico";
+  font-size: 1.4em;
+  color: #581d22;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+button.btnPix:hover {
   color: #dabfc1;
 }

@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="lista_presentes.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="cart.css">
+    <link rel="stylesheet" type="text/css" href="modal_pix.css">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,6 +159,11 @@
                                     onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
                                     Adicionar ao carrinho
                                 </button>
+
+                                <!--Pix -->
+                                <button class="btnPix" onclick="pagarComPix()">
+                                    Pagar com Pix
+                                </button>
                             </div>
                         </div>
                         <% } %>
@@ -178,6 +184,11 @@
                                                 <button class="btn-price"
                                                     onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
                                                     Adicionar ao carrinho
+                                                </button>
+
+                                                <!--Pix -->
+                                                <button class="btnPix" onclick="pagarComPix()">
+                                                    Pagar com Pix
                                                 </button>
                                             </div>
                                         </div>
@@ -200,11 +211,38 @@
                                                                     onclick="adicionarAoCarrinho('<%=item.titulo%>', '<%=item.preco%>', '<%= item.id%>')">
                                                                     Adicionar ao carrinho
                                                                 </button>
+
+                                                                <!--Pix -->
+                                                                <button class="btnPix" onclick="pagarComPix()">
+                                                                    Pagar com Pix
+                                                                </button>
                                                             </div>
                                                         </div>
                                                         <% } %>
                                                             <% }) %>
+    </section>
 
+    <section id="modal-pix" class="none">
+        <div id="modal-info" class="m-auto">
+            <div id="fecharmodalpix">
+                <figure>
+                    <img src="../images/fechar.png" alt="">
+                </figure>
+            </div>
+            <figure class="flex">
+                <img src="../images/pix-64.png" class="m-auto" alt="Icone Pix">
+            </figure>
+            <h2>Faça o pagamento na chave Pix:</h2>
+            <div id="numero">
+                <p id="numero-pix">11940047115</p>
+            </div>
+            <div id="banco-info">
+                <p>O banco receptor é o Santander. Está no nome de Igor Silva</p>
+            </div>
+            <div id="btnPagar">
+                <button id="copy" onclick="copiarNumeroPix()">Copiar chave pix</button>
+            </div>
+        </div>
     </section>
 
     <footer>

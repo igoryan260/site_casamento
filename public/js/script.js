@@ -112,7 +112,6 @@ iconCart.addEventListener("click", () => {
 /******************** fim abrir e fechar carrinho ***************/
 
 /* habilitar/desabilitar 'ir para compra' se houver itens no carrinho */
-
 function verificaItensNoCarrinho() {
     let irParaCompra = document.querySelector("#btn-compra");
     let itemExiste = document.querySelector("#tbody_cart")
@@ -123,12 +122,9 @@ function verificaItensNoCarrinho() {
         irParaCompra.disabled = false
     }
 }
-
 /* fim habilitar/desabilitar 'ir para compra' se houver itens no carrinho */
 
-
 /*********** indicador de quantidade de itens no carrinho ****************/
-
 function indicadorQuantidadeItens() {
     let tbody = document.querySelector("#tbody_cart");
     let linhas = tbody.getElementsByTagName("tr").length;
@@ -144,5 +140,32 @@ function indicadorQuantidadeItens() {
         qntd.style.display = "flex"
     };
 }
-
 /*********** Fim indicador de quantidade de itens no carrinho ****************/
+
+/** Pagar com pix  */
+
+function pagarComPix() {
+    let modalpix = document.querySelector("#modal-pix");
+
+    modalpix.classList.remove("none");
+    modalpix.classList.add("flex");
+};
+
+document.querySelector("#fecharmodalpix").addEventListener("click", () => {
+    let modalpix = document.querySelector("#modal-pix");
+
+    modalpix.classList.remove("flex");
+    modalpix.classList.add("none");
+});
+
+async function copiarNumeroPix() {
+    let numeroPix = document.querySelector("#numero-pix").innerHTML;
+
+    try {
+        await navigator.clipboard.writeText(numeroPix);
+        alert("Texto copiado para a área de transferência!");
+    } catch (error) {
+        console.error("Erro ao copiar o texto: ", error);
+        alert("Erro ao copiar o texto. Tente selecionar o número e copiar manualmente");
+    }
+};
