@@ -23,9 +23,26 @@
 
     <!--SDK MercadoPago.js-->
     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        //executar função a cada 3 minutos +-
+
+        setInterval(async function keepalaiveping() {
+            await fetch("https://casamentobeig.onrender.com/keepaliveping", {
+                method: "post",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => {
+                    console.log(response)
+                }).catch(error => {
+                    console.log(error);
+                });
+        }, 200000);
+    </script>
 </head>
 
-<body onload="keepalaiveping()">
+<body>
     <header>
         <div id="titulos_topo_site">
             <h1>Beatriz e Igor</h1>
@@ -250,7 +267,7 @@
     </footer>
 
     <!--scripts-->
-    <script src="js/keepaliveping.js"></script>
+
     <script src="js/mercadoPagoIntegracao.js"></script>
     <script src="js/script.js"></script>
     <script src="js/slide.js"></script>
