@@ -15,7 +15,7 @@ app.listen(process.env.PORT, () => {
             }).catch(error => {
                 console.log(error);
             });
-    }, 600000);
+    }, (60000 * 10));
 
     console.log("Servidor ouvindo")
 })
