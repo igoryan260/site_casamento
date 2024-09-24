@@ -2,7 +2,6 @@ import express from "express";
 import RenderizarIndex from "../controller/RenderizarIndex.js";
 import Preferencia from "../controller/Preferencia.js";
 import RenderizarStatusPayment from "../controller/RenderizarStatusPayment.js";
-import KeepAlivePing from "../controller/KeepAlivePing.js";
 
 const route = express.Router();
 route.use(express.json());
@@ -18,7 +17,6 @@ route.get("/feedback", (req, res) => {
         MerchantOrder: req.query.merchant_order_id
     });
 });
-route.post("/keepaliveping", KeepAlivePing.interval);
 route.post("/createPreference", Preferencia.novaPreferencia);
 //esta rota abaixo só funcionára caso queira adicionar novos itens para a lista de presente...
 //route.get("/salvarDocumentos", RenderizarIndex.salvarVariosDocs)
